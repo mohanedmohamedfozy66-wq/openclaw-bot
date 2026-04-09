@@ -1,9 +1,6 @@
 {
   "gateway": {
-    "port": 18789,
-    "auth": {
-      "enabled": false
-    }
+    "port": 18789
   },
   "model": {
     "provider": "google",
@@ -13,7 +10,8 @@
   "channels": {
     "telegram": {
       "enabled": true,
-      "token": "${TELEGRAM_BOT_TOKEN}"
+      "token": "${TELEGRAM_BOT_TOKEN}",
+      "allowedUsers": ["7137874961"]
     }
   }
 }

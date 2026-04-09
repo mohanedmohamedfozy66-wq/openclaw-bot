@@ -1,17 +1,24 @@
 {
-  "gateway": {
-    "port": 18789
+  "models": {
+    "providers": {
+      "google": {
+        "apiKey": "${GOOGLE_API_KEY}"
+      }
+    }
   },
-  "ai": {
-    "provider": "google",
-    "apiKey": "${GOOGLE_API_KEY}",
-    "model": "gemini-2.0-flash-exp"
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "google/gemini-2.0-flash-exp"
+      }
+    }
   },
   "channels": {
     "telegram": {
       "enabled": true,
-      "token": "${TELEGRAM_BOT_TOKEN}",
-      "allowedUsers": ["7137874961"]
+      "botToken": "${TELEGRAM_BOT_TOKEN}",
+      "dmPolicy": "allowlist",
+      "allowFrom": ["tg:7137874961"]
     }
   }
 }

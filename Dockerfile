@@ -5,13 +5,10 @@ RUN npm install -g openclaw@latest
 WORKDIR /app
 COPY . .
 
-ENV OPENCLAW_SKIP_ONBOARD=1
-ENV NODE_ENV=production
+RUN mkdir -p /root/.openclaw
 
-RUN openclaw onboard \
-  --provider google \
-  --skip-interactive || true
+RUN echo '{"gateway":{"port":18789},"model":{"provider":"google","apiKey":"'$GOOGLE_API_KEY'","model":"gemini-2.0-flash-exp"},"channels":{"telegram":{"enabled":true,"token":"'$TELEGRAM_BOT_TOKEN'"}}}' > /root/.openclaw/config.json
 
 EXPOSE 18789
 
-CMD ["openclaw", "gateway", "start", "--no-daemon"]
+CMD openclaw gateway start --no-daemon --config /root/.openclaw/config.json

@@ -1,1 +1,0 @@
-FROM coollabsio/openclaw:latest

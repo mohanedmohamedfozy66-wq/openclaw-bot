@@ -6,7 +6,7 @@ from telegram.ext import Application, MessageHandler, filters, ContextTypes
 
 OPENROUTER_API_KEY = os.environ.get("OPENROUTER_API_KEY")
 TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN")
-MODEL = "nvidia/nemotron-super-70b-instruct:free"
+MODEL = "nvidia/nemotron-super-49b-v1:free"
 
 chat_histories = {}
 

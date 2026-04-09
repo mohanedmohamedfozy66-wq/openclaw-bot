@@ -6,7 +6,7 @@ from telegram.ext import Application, MessageHandler, filters, ContextTypes
 
 OPENROUTER_API_KEY = os.environ.get("OPENROUTER_API_KEY")
 TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN")
-MODEL = "google/gemini-2.0-flash-exp:free"
+MODEL = "minimax/minimax-m2.5:free"
 
 chat_histories = {}
 

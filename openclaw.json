@@ -2,7 +2,7 @@
   "gateway": {
     "port": 18789
   },
-  "model": {
+  "ai": {
     "provider": "google",
     "apiKey": "${GOOGLE_API_KEY}",
     "model": "gemini-2.0-flash-exp"

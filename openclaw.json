@@ -1,14 +1,19 @@
 {
-  "channels": {
-    "telegram": {
-      "enabled": true,
-      "token": "${TELEGRAM_BOT_TOKEN}",
-      "allowedUsers": []
+  "gateway": {
+    "port": 18789,
+    "auth": {
+      "enabled": false
     }
   },
   "model": {
     "provider": "google",
     "apiKey": "${GOOGLE_API_KEY}",
-    "model": "gemini-2.0-flash"
+    "model": "gemini-2.0-flash-exp"
+  },
+  "channels": {
+    "telegram": {
+      "enabled": true,
+      "token": "${TELEGRAM_BOT_TOKEN}"
+    }
   }
 }

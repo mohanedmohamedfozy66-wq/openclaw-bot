@@ -1,10 +1,16 @@
 {
-  "name": "openclaw-bot",
-  "version": "1.0.0",
-  "scripts": {
-    "start": "openclaw gateway start --no-daemon"
+  "gateway": {
+    "port": 18789
   },
-  "dependencies": {
-    "openclaw": "latest"
+  "model": {
+    "provider": "google",
+    "apiKey": "${GOOGLE_API_KEY}",
+    "model": "gemini-2.0-flash-exp"
+  },
+  "channels": {
+    "telegram": {
+      "enabled": true,
+      "token": "${TELEGRAM_BOT_TOKEN}"
+    }
   }
 }

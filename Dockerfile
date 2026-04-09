@@ -1,6 +1,5 @@
 FROM node:22-slim
 RUN npm install -g openclaw@latest
-RUN npm install -g grammy
 WORKDIR /app
 COPY . .
 EXPOSE 18789

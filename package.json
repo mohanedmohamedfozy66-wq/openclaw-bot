@@ -1,10 +1,4 @@
 {
   "name": "openclaw-bot",
-  "version": "1.0.0",
-  "scripts": {
-    "start": "openclaw gateway start"
-  },
-  "dependencies": {
-    "openclaw": "latest"
-  }
+  "version": "1.0.0"
 }

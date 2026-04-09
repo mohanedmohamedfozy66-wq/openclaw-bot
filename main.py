@@ -43,8 +43,13 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
             "content": reply
         })
         await update.message.reply_text(reply)
-    except Exception as e:
-        await update.message.reply_text("حصل خطأ، حاول تاني.")
+    except requests.exceptions.Timeout:
+    await update.message.reply_text("timeout - النموذج بطيء")
+except Exception as e:
+    error_msg = f"خطأ: {str(e)}"
+    if response:
+        error_msg += f"\nResponse: {response.text[:200]}"
+    await update.message.reply_text(error_msg)
 
 def main():
     app = Application.builder().token(TELEGRAM_BOT_TOKEN).build()
